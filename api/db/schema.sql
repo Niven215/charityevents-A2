@@ -15,3 +15,24 @@ CREATE TABLE categories (
     category_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(80) NOT NULL UNIQUE
 );
+
+CREATE TABLE events (
+    event_id INT AUTO_INCREMENT PRIMARY KEY,
+    org_id INT NOT NULL,
+    category_id INT NOT NULL,
+    name VARCHAR(150) NOT NULL,
+    short_description VARCHAR(255),
+    full_description TEXT,
+    event_date DATE NOT NULL,
+    event_time TIME,
+    location VARCHAR(150) NOT NULL,
+    image_url VARCHAR(255),
+    ticket_price DECIMAL(8,2) DEFAULT 0.00,
+    is_free BOOLEAN DEFAULT FALSE,
+    fundraising_goal DECIMAL(10,2) DEFAULT 0.00,
+    current_progress DECIMAL(10,2) DEFAULT 0.00,
+    is_suspended BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (org_id) REFERENCES organisations(org_id),
+    FOREIGN KEY (category_id) REFERENCES categories(category_id)
+);
