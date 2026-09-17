@@ -36,3 +36,13 @@ CREATE TABLE events (
     FOREIGN KEY (org_id) REFERENCES organisations(org_id),
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
+
+INSERT INTO organisations (name, mission_statement, contact_email, contact_phone, logo_url) VALUES
+('Bright Futures Foundation', 'Empowering underprivileged children through education and community support.', 'contact@brightfutures.org', '02 5550 1234', 'https://placehold.co/120x120?text=BFF');
+
+INSERT INTO categories (name) VALUES
+('Gala Dinner'),
+('Fun Run'),
+('Silent Auction'),
+('Concert'),
+('Walkathon');
