@@ -68,4 +68,20 @@ VALUES
 
 (1, 5, 'Steps for a Cause Walkathon', '10K community walkathon supporting cancer research.',
  'Walk 10K with the community to raise funds for local cancer research initiatives. Water stations and entertainment along the route.',
- '2026-10-20', '08:00:00', 'Botanic Gardens, Adelaide', 'https://placehold.co/600x350?text=Steps+for+a+Cause', 15.00, FALSE, 12000.00, 3100.00, FALSE);
+ '2026-10-20', '08:00:00', 'Botanic Gardens, Adelaide', 'https://placehold.co/600x350?text=Steps+for+a+Cause', 15.00, FALSE, 12000.00, 3100.00, FALSE),
+
+(1, 1, 'Winter Wonderland Gala', 'A festive winter-themed fundraising dinner.',
+ 'Celebrate the season at our Winter Wonderland Gala featuring a festive dinner, raffle, and guest speakers sharing impact stories.',
+ '2026-07-10', '18:00:00', 'Ivy Ballroom, Sydney', 'https://placehold.co/600x350?text=Winter+Wonderland', 120.00, FALSE, 30000.00, 30500.00, FALSE),
+
+(1, 2, 'Spring Family Fun Run', 'A 3K family-friendly walk/run with kids activities.',
+ 'A shorter, family-friendly 3K route with face painting, kids activities, and a post-run picnic. Great for all ages.',
+ '2026-09-05', '08:30:00', 'Centennial Park, Sydney', 'https://placehold.co/600x350?text=Spring+Fun+Run', 10.00, FALSE, 8000.00, 8000.00, FALSE),
+
+(1, 3, 'Vintage Treasures Auction', 'Silent auction of vintage collectibles and memorabilia.',
+ 'Discover vintage collectibles, memorabilia, and antiques, all donated by generous community members, with proceeds supporting elderly care services.',
+ '2026-11-30', '17:30:00', 'Heritage Hall, Hobart', 'https://placehold.co/600x350?text=Vintage+Treasures', 5.00, FALSE, 9000.00, 2200.00, FALSE),
+
+(1, 4, 'Rhythms for Recovery Concert', 'A benefit concert supporting disaster relief efforts.',
+ 'A benefit concert featuring multiple genres, raising funds for communities affected by recent natural disasters.',
+ '2026-08-15', '19:30:00', 'Riverside Amphitheatre, Brisbane', 'https://placehold.co/600x350?text=Rhythms+for+Recovery', 35.00, FALSE, 25000.00, 25000.00, TRUE);
