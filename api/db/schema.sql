@@ -46,3 +46,26 @@ INSERT INTO categories (name) VALUES
 ('Silent Auction'),
 ('Concert'),
 ('Walkathon');
+
+INSERT INTO events
+(org_id, category_id, name, short_description, full_description, event_date, event_time, location, image_url, ticket_price, is_free, fundraising_goal, current_progress, is_suspended)
+VALUES
+(1, 1, 'Starlight Charity Gala', 'An elegant evening of dinner and dancing for a great cause.',
+ 'Join us for the Starlight Charity Gala, a black-tie evening featuring a three-course dinner, live music, and a live auction. All proceeds support scholarships for underprivileged children.',
+ '2026-11-15', '18:30:00', 'Grand Harbour Hotel, Sydney', 'https://placehold.co/600x350?text=Starlight+Gala', 150.00, FALSE, 50000.00, 18500.00, FALSE),
+
+(1, 2, 'City Fun Run 5K', 'A family-friendly 5K run/walk through the city centre.',
+ 'Lace up your shoes for our annual 5K Fun Run. Suitable for all ages and fitness levels. Every registration funds a school meal program.',
+ '2026-10-05', '07:00:00', 'Riverside Park, Melbourne', 'https://placehold.co/600x350?text=City+Fun+Run', 25.00, FALSE, 10000.00, 4200.00, FALSE),
+
+(1, 3, 'Art for Hope Silent Auction', 'Bid on original artworks donated by local artists.',
+ 'Browse and bid on a curated collection of paintings, sculptures, and photography donated by local artists. All proceeds go directly to youth mentoring programs.',
+ '2026-09-28', '17:00:00', 'Community Arts Centre, Brisbane', 'https://placehold.co/600x350?text=Art+for+Hope', 0.00, TRUE, 15000.00, 6300.00, FALSE),
+
+(1, 4, 'Voices of Change Concert', 'An evening of live music from local bands supporting mental health awareness.',
+ 'A night of live performances from local musicians, raising funds and awareness for youth mental health services.',
+ '2026-12-02', '19:00:00', 'Open Air Theatre, Perth', 'https://placehold.co/600x350?text=Voices+of+Change', 40.00, FALSE, 20000.00, 5000.00, FALSE),
+
+(1, 5, 'Steps for a Cause Walkathon', '10K community walkathon supporting cancer research.',
+ 'Walk 10K with the community to raise funds for local cancer research initiatives. Water stations and entertainment along the route.',
+ '2026-10-20', '08:00:00', 'Botanic Gardens, Adelaide', 'https://placehold.co/600x350?text=Steps+for+a+Cause', 15.00, FALSE, 12000.00, 3100.00, FALSE);
