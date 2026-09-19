@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
     res.send('Charity Events API is running. Try /api/events');
 });
 
+app.get('/health', (req, res) => {
+    res.json({ status: 'ok' });
+});
+
 app.listen(PORT, () => {
     console.log(`Charity Events API listening on http://localhost:${PORT}`);
 });
