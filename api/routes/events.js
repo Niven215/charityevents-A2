@@ -32,6 +32,33 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/:id', async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT
+                e.*,
+                c.name AS category_name,
+                o.name AS organisation_name,
+                o.mission_statement,
+                o.contact_email,
+                o.contact_phone
+             FROM events e
+             JOIN categories c ON e.category_id = c.category_id
+             JOIN organisations o ON e.org_id = o.org_id
+             WHERE e.event_id = ?`,
+            [req.params.id]
+        );
+
+        if (rows.length === 0) {
+            return res.status(404).json({ error: 'Event not found.' });
+        }
+        res.json(addStatus(rows[0]));
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Failed to retrieve event details.' });
+    }
+});
+
 function addStatus(event) {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
