@@ -24,11 +24,22 @@ const EVENT_LIST_QUERY = `
 router.get('/', async (req, res) => {
     try {
         const [rows] = await db.query(`${EVENT_LIST_QUERY} ORDER BY e.event_date ASC`);
-        res.json(rows);
+        const events = rows.map(addStatus);
+        res.json(events);
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Failed to retrieve events.' });
     }
 });
+
+function addStatus(event) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const eventDate = new Date(event.event_date);
+    return {
+        ...event,
+        status: eventDate >= today ? 'upcoming' : 'past'
+    };
+}
 
 module.exports = router;
