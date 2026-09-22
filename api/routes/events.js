@@ -32,6 +32,35 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/search', async (req, res) => {
+    try {
+        const { date, location, category } = req.query;
+        let query = EVENT_LIST_QUERY;
+        const params = [];
+
+        if (date) {
+            query += ' AND e.event_date = ?';
+            params.push(date);
+        }
+        if (location) {
+            query += ' AND e.location LIKE ?';
+            params.push(`%${location}%`);
+        }
+        if (category) {
+            query += ' AND c.category_id = ?';
+            params.push(category);
+        }
+        query += ' ORDER BY e.event_date ASC';
+
+        const [rows] = await db.query(query, params);
+        const events = rows.map(addStatus);
+        res.json(events);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Failed to search events.' });
+    }
+});
+
 router.get('/:id', async (req, res) => {
     try {
         const [rows] = await db.query(
