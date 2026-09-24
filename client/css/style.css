@@ -1,0 +1,111 @@
+:root {
+    --primary: #d6336c;
+    --primary-dark: #a61e4d;
+    --accent: #1c7ed6;
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text: #212529;
+    --muted: #6c757d;
+    --border: #e9ecef;
+    --success: #2f9e44;
+    --danger: #e03131;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+header.site-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 1rem 1.5rem;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+
+nav.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a.active {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.hero {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.hero h1 {
+    margin-top: 0;
+    color: var(--primary-dark);
+}
+
+.contact-info {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--muted);
+    padding: 2rem;
+}
