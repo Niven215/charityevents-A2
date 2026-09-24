@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     loadCategories();
+
     document.getElementById('search-form').addEventListener('submit', handleSearch);
+    document.getElementById('clear-filters').addEventListener('click', handleClearFilters);
 });
 
 async function loadCategories() {
@@ -20,6 +22,7 @@ async function loadCategories() {
 
 async function handleSearch(event) {
     event.preventDefault();
+    hideError();
 
     const date = document.getElementById('date').value;
     const location = document.getElementById('location').value.trim();
@@ -35,9 +38,35 @@ async function handleSearch(event) {
 
     try {
         const events = await fetchJSON(`/events/search?${params.toString()}`);
+
+        if (events.length === 0) {
+            resultsGrid.innerHTML = '';
+            showError('No events match your search criteria. Try adjusting your filters.');
+            return;
+        }
+
         resultsGrid.innerHTML = events.map(buildEventCard).join('');
     } catch (err) {
         console.error(err);
-        resultsGrid.innerHTML = '<p class="empty-state">Something went wrong while searching.</p>';
+        resultsGrid.innerHTML = '';
+        showError('Something went wrong while searching. Please make sure the API server is running and try again.');
     }
+}
+
+function handleClearFilters() {
+    document.getElementById('search-form').reset();
+    document.getElementById('results-grid').innerHTML = '';
+    hideError();
+}
+
+function showError(message) {
+    const box = document.getElementById('error-message');
+    box.textContent = message;
+    box.style.display = 'block';
+}
+
+function hideError() {
+    const box = document.getElementById('error-message');
+    box.style.display = 'none';
+    box.textContent = '';
 }
