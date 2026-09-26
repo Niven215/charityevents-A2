@@ -56,9 +56,14 @@ function renderEvent(event) {
                     <div class="info-card">
                         <h3>Ticket Information</h3>
                         <p class="price-tag">${formatPrice(event)}</p>
+                        <button id="register-btn" class="btn btn-primary" style="margin-top: 0.8rem;">Register</button>
                     </div>
                 </div>
             </div>
         </article>
     `;
+
+    document.getElementById('register-btn').addEventListener('click', () => {
+        alert('This feature is currently under construction.');
+    });
 }
