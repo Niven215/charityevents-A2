@@ -28,6 +28,9 @@ function renderEvent(event) {
     document.title = `${event.name} - Charity Events`;
 
     const statusLabel = event.status === 'upcoming' ? 'Upcoming' : 'Past';
+    const progressPct = event.fundraising_goal > 0
+        ? Math.min(100, Math.round((event.current_progress / event.fundraising_goal) * 100))
+        : 0;
 
     const container = document.getElementById('event-detail-container');
     container.innerHTML = `
@@ -39,6 +42,22 @@ function renderEvent(event) {
                 <h1>${event.name}</h1>
                 <p class="event-meta">${formatDate(event.event_date)}${event.event_time ? ' at ' + event.event_time.slice(0, 5) : ''} &middot; ${event.location}</p>
                 <p>${event.full_description || event.short_description}</p>
+
+                <div class="detail-grid">
+                    <div class="info-card">
+                        <h3>Fundraising Progress</h3>
+                        <p>$${Number(event.current_progress).toLocaleString()} raised of $${Number(event.fundraising_goal).toLocaleString()} goal (${progressPct}%)</p>
+                        <div class="progress-bar-track">
+                            <div class="progress-bar-fill" style="width: ${progressPct}%;"></div>
+                        </div>
+                        <p class="event-meta">Hosted by ${event.organisation_name}</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Ticket Information</h3>
+                        <p class="price-tag">${formatPrice(event)}</p>
+                    </div>
+                </div>
             </div>
         </article>
     `;
