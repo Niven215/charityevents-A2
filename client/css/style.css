@@ -236,3 +236,51 @@ button, .btn {
     margin-bottom: 1rem;
     display: none;
 }
+
+.event-detail {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.event-detail img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+}
+
+.event-detail-body {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 700px) {
+    .detail-grid { grid-template-columns: 1fr; }
+}
+
+.info-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem;
+}
+
+.progress-bar-track {
+    background: var(--border);
+    border-radius: 999px;
+    height: 12px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+
+.progress-bar-fill {
+    background: var(--success);
+    height: 100%;
+}
