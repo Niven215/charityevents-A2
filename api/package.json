@@ -1,6 +1,7 @@
 {
   "name": "charityevents-api",
   "version": "1.0.0",
+  "private": true,
   "description": "REST API for the Charity Events website (PROG2002 Assessment 2)",
   "main": "server.js",
   "scripts": {
