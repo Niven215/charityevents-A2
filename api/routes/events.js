@@ -74,7 +74,7 @@ router.get('/:id', async (req, res) => {
              FROM events e
              JOIN categories c ON e.category_id = c.category_id
              JOIN organisations o ON e.org_id = o.org_id
-             WHERE e.event_id = ?`,
+             WHERE e.event_id = ? AND e.is_suspended = FALSE`,
             [req.params.id]
         );
 
