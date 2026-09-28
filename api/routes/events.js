@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db/event_db');
+const db = require('../db/db');
 
 const EVENT_LIST_QUERY = `
     SELECT

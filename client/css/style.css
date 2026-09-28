@@ -176,14 +176,32 @@ footer {
     margin-top: auto;
 }
 
+.page-heading {
+    text-align: center;
+    margin: 1rem 0 2rem;
+}
+
+.page-heading .section-title {
+    font-size: 1.9rem;
+    margin: 0 0 0.4rem;
+}
+
+.section-subtitle {
+    margin: 0 auto;
+    max-width: 560px;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
 .search-form {
     background: var(--card-bg);
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-radius: 12px;
+    border-top: 4px solid var(--primary);
+    padding: 1.75rem;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
     margin-bottom: 2rem;
     align-items: end;
 }
@@ -191,25 +209,82 @@ footer {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.4rem;
 }
 
 .form-group label {
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
 }
 
 .form-group input,
 .form-group select {
-    padding: 0.5rem;
-    border: 1px solid var(--border);
-    border-radius: 6px;
+    height: 44px;
+    padding: 0 0.85rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background: #fdfdfe;
+    font-family: inherit;
     font-size: 0.95rem;
+    color: var(--text);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #ced4da;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.15);
+    background: #fff;
 }
 
 .form-actions {
+    grid-column: 1 / -1;
     display: flex;
+    justify-content: flex-end;
     gap: 0.6rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+}
+
+.form-actions button {
+    height: 44px;
+    padding: 0 1.4rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.form-actions button:active {
+    transform: translateY(1px);
+}
+
+.search-form .btn-secondary {
+    background: transparent;
+    border: 1px solid #dee2e6;
+    color: var(--muted);
+}
+
+.search-form .btn-secondary:hover {
+    background: var(--bg);
+    color: var(--text);
+}
+
+@media (max-width: 900px) {
+    .search-form { grid-template-columns: repeat(2, 1fr); }
+    .form-actions button { flex: 1; }
+}
+
+@media (max-width: 560px) {
+    .search-form { grid-template-columns: 1fr; padding: 1.25rem; }
 }
 
 button, .btn {

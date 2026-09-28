@@ -38,13 +38,13 @@ CREATE TABLE events (
 );
 
 INSERT INTO organisations (name, mission_statement, contact_email, contact_phone, logo_url) VALUES
-('Bright Futures Foundation', 'Empowering underprivileged children through education and community support.', 'contact@brightfutures.org', '02 5550 1234', 'https://placehold.co/120x120?text=BFF');
+('Bright Futures Foundation', 'Empowering underprivileged children through education and community support.', 'contact@brightfutures.org', '00 111 2222', 'https://placehold.co/120x120?text=BFF');
 
 INSERT INTO categories (name) VALUES
-('Gala Dinner'),
+('Gala'),
 ('Fun Run'),
-('Silent Auction'),
-('Concert'),
+('Auction'),
+('Music Concert'),
 ('Walkathon');
 
 INSERT INTO events
@@ -52,7 +52,7 @@ INSERT INTO events
 VALUES
 (1, 1, 'Starlight Charity Gala', 'An elegant evening of dinner and dancing for a great cause.',
  'Join us for the Starlight Charity Gala, a black-tie evening featuring a three-course dinner, live music, and a live auction. All proceeds support scholarships for underprivileged children.',
- '2026-11-15', '18:30:00', 'Grand Harbour Hotel, Sydney', 'https://placehold.co/600x350?text=Starlight+Gala', 150.00, FALSE, 50000.00, 18500.00, FALSE),
+ '2026-11-15', '18:30:00', 'Grand Harbour Hotel, Perth', 'https://placehold.co/600x350?text=Starlight+Gala', 150.00, FALSE, 50000.00, 18500.00, FALSE),
 
 (1, 2, 'City Fun Run 5K', 'A family-friendly 5K run/walk through the city centre.',
  'Lace up your shoes for our annual 5K Fun Run. Suitable for all ages and fitness levels. Every registration funds a school meal program.',
@@ -72,11 +72,11 @@ VALUES
 
 (1, 1, 'Winter Wonderland Gala', 'A festive winter-themed fundraising dinner.',
  'Celebrate the season at our Winter Wonderland Gala featuring a festive dinner, raffle, and guest speakers sharing impact stories.',
- '2026-07-10', '18:00:00', 'Ivy Ballroom, Sydney', 'https://placehold.co/600x350?text=Winter+Wonderland', 120.00, FALSE, 30000.00, 30500.00, FALSE),
+ '2026-07-10', '18:00:00', 'Ivy Ballroom, Perth', 'https://placehold.co/600x350?text=Winter+Wonderland', 120.00, FALSE, 30000.00, 30500.00, FALSE),
 
 (1, 2, 'Spring Family Fun Run', 'A 3K family-friendly walk/run with kids activities.',
  'A shorter, family-friendly 3K route with face painting, kids activities, and a post-run picnic. Great for all ages.',
- '2026-09-05', '08:30:00', 'Centennial Park, Sydney', 'https://placehold.co/600x350?text=Spring+Fun+Run', 10.00, FALSE, 8000.00, 8000.00, FALSE),
+ '2026-09-05', '08:30:00', 'Centennial Park, Perth', 'https://placehold.co/600x350?text=Spring+Fun+Run', 10.00, FALSE, 8000.00, 8000.00, FALSE),
 
 (1, 3, 'Vintage Treasures Auction', 'Silent auction of vintage collectibles and memorabilia.',
  'Discover vintage collectibles, memorabilia, and antiques, all donated by generous community members, with proceeds supporting elderly care services.',
